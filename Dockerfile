@@ -4,14 +4,14 @@ MAINTAINER Hama Amakaye
 ENV PYTHONUNBUFFERED 1
 
 # Install dependencies
-ADD ./requirements.txt /app/
+ADD ./requirements.txt /requirements.txt
 
 RUN pip install -r /requirements.txt
 
 # Setup directory structure
 RUN mkdir /app
 WORKDIR /app
-ADD . /app/
+ADD ./app/ /app
 
 RUN adduser -D user
 USER user
