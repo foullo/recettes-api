@@ -1,17 +1,16 @@
 version: '3.7'
 
-CMD: [ python manage.py runserver 0.0.0.0:8000 ]
 services:
-  app:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./app:/app
-    command:
-      - /bin/bash
-        - -c
-        - |
-        python manage.py runserver 0.0.0.0:8000
+ app:
+   build:
+     context: ./
+     dockerfile: Dockerfile
+   ports:
+     - "8000:8000"
+   volumes:
+     - ./app:/app
+   command:
+     - /bin/bash
+       - -c
+       - |
+          python manage.py runserver 0.0.0.0:8000
