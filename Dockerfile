@@ -15,5 +15,5 @@ COPY . .
 
 CMD [ "python", "./app/manage.py" ]
 
-RUN useradd -ms /bin/bash hama
-USER user
+RUN useradd --user-group --system --create-home --no-log-init app
+USER app
