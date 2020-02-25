@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3
 LABEL maintainer="foullo@hotmail.com"
 
 ENV PYTHONUNBUFFERED 1
@@ -12,6 +12,8 @@ WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . .
+
+CMD [ "python", "./app/manage.py" ]
 
 RUN adduser -D user
 USER user
