@@ -14,6 +14,3 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD [ "python", "./app/manage.py" ]
-
-RUN useradd --user-group --system --create-home --no-log-init app
-USER app
