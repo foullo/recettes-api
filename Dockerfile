@@ -15,5 +15,5 @@ COPY . .
 
 CMD [ "python", "./app/manage.py" ]
 
-RUN adduser -D user
+RUN useradd -ms /bin/bash hama
 USER user
