@@ -13,5 +13,4 @@ before_script:
   - chmod +x docker-compose
 
 script:
-  - docker-compose exec app python manage.py test
-  - docker-compose exec app flake8
+  - docker-compose run app sh -c "python manage.py test && flake8"
