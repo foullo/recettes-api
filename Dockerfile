@@ -4,14 +4,14 @@ LABEL maintainer="foullo@hotmail.com"
 ENV PYTHONUNBUFFERED 1
 
 # Setup directory structure
-RUN mkdir /app
-WORKDIR /app
-COPY . /app/ /app/
+
+WORKDIR /usr/src/app
+
 
 # Install dependencies
-COPY requirements.txt /app/
-RUN pip3 install -r requirements.txt
-
+COPY requirements.txt ./
+RUN pip3 install --no-cache-dir -r requirements.txt
+COPY . .
 
 RUN adduser -D user
 USER user
