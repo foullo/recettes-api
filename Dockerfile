@@ -6,10 +6,12 @@ ENV PYTHONUNBUFFERED 1
 # Setup directory structure
 RUN mkdir /app
 WORKDIR /app
+COPY . /app/ /app/
+
 # Install dependencies
 COPY requirements.txt /app/
 RUN pip3 install -r requirements.txt
-COPY . /app/
+
 
 RUN adduser -D user
 USER user
